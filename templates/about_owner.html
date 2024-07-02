@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Owner</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-QtzH3DAvvXRFYXjQYUMeAkMxXIHREaxH5RylD5TI8VRzkCjQK3dSa5oYN9tpRyDxlkld2cR7h8mQ/KiYPLKiQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .back-button {
+            background-color: #FDD835;
+            color: #1f1c2c;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #e0c32b;
+        }
+
+        .owner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .owner-card, .social-media-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .owner-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        .owner-card h1 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #FDD835;
+        }
+
+        .owner-card p {
+            font-size: 0.9rem;
+            color: #d0d0d0;
+            line-height: 1.5;
+        }
+
+        .social-media-card h2 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #FDD835;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-media a {
+            text-decoration: none;
+            color: #FDD835;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #e0c32b;
+        }
+
+        .social-media a img {
+    width: 30px; /* Set your desired icon size */
+    height: 30px; /* Set your desired icon size */
+    margin: 0 10px; /* Space between icons */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-media a img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    opacity: 0.8; /* Change opacity on hover */
+}
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back();">Back</button>
+    <div class="owner-container">
+        <div class="owner-card animate__animated animate__fadeInUp">
+            <img src="https://th.bing.com/th/id/OIP.ogtsqHLjkOZhI8i6fdPUiAHaH_?rs=1&pid=ImgDetMain" alt="Owner Photo"> <!-- Replace with the owner's photo path -->
+            <h1>About the Owner</h1>
+            <p>
+                Hello, I am Vishal, the founder of HomeHub. Also, I am a Django developer. You can connect with me on social media.
+            </p>
+        </div>
+        <div class="social-media-card animate__animated animate__fadeInUp">
+            <h2>Connect with me</h2>
+            <div class="social-media">
+                <a href="https://github.com/nota63" target="_blank" title="GitHub">
+                   <img src="https://th.bing.com/th/id/OIP.rIONbwiwOm_V37ef5VAyDwHaFj?rs=1&pid=ImgDetMain" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/a_software_engineer_4/" target="_blank" title="Instagram">
+                  <img src="https://th.bing.com/th/id/OIP.aWhpAoFdTKWAQNIb_18bZwHaHL?rs=1&pid=ImgDetMain" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/harshad-dudhabarve-3709302a1/" target="_blank" title="LinkedIn">
+                    <img src="https://th.bing.com/th/id/OIP.nXZ4WivoaVdAukWX8CvoJgHaHv?rs=1&pid=ImgDetMain" alt="LinkedIn">
+                </a>
+                <a href="https://wa.me/+919022216598" target="_blank" title="WhatsApp">
+                   <img src="https://th.bing.com/th/id/OIP.QS9i9nE-2mnfhXTkIxBpaAHaHa?rs=1&pid=ImgDetMain" alt="WhatsApp">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

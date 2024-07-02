@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Are</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-QtzH3DAvvXRFYXjQYUMeAkMxXIHREaxH5RylD5TI8VRzkCjQK3dSa5oYN9tpRyDxlkld2cR7h8mQ/KiYPLKiQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            color: #FDD835; /* Yellow color for the title */
+        }
+
+        .about-section {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            max-width: 600px; /* Width for the content */
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+            text-align: center;
+        }
+
+        .about-section img {
+            width: 100px; /* Adjusted Logo size */
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .about-section h2 {
+            margin-bottom: 10px;
+            font-size: 1.3rem; /* Adjusted subtitle size */
+            color: #FDD835; /* Yellow color for the sub-title */
+        }
+
+        .about-section p {
+            font-size: 0.8rem; /* Smaller text size */
+            color: #d0d0d0;
+            line-height: 1.5;
+        }
+
+        .about-section .date-founded {
+            margin-top: 10px;
+            font-size: 0.8rem; /* Smaller text size for date */
+            color: #d0d0d0;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Reduced gap */
+            margin-top: 15px;
+        }
+
+        .social-media a {
+            text-decoration: none;
+            color: #FDD835;
+            font-size: 1.3rem; /* Slightly smaller icons */
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #e0c32b; /* Slightly darker yellow for hover */
+        }
+
+        .back-button {
+            background-color: #FDD835;
+            color: #1f1c2c;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 0.9rem; /* Smaller button text */
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #e0c32b; /* Slightly darker yellow for hover */
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back();">Back</button>
+    <div class="about-section animate__animated animate__fadeInUp">
+        {% load static %}
+        <img src="{% static 'ap.png'%}" alt="Company Logo"> <!-- Replace with your logo path -->
+        <h1>What We Are</h1>
+        <h2>About HomeHub</h2>
+        <p>
+            Welcome to HomeHub, where we are dedicated to providing exceptional home services designed to meet all your needs. Our mission is to connect you with the best professionals for a variety of services including electrical repairs, plumbing, cleaning, and more. Founded on the principles of quality, reliability, and customer satisfaction, we have built a team of experts committed to delivering outstanding results for every job. Whether you require urgent repairs or planned renovations, HomeHub is here to offer you efficient and reliable solutions. Our focus is on delivering personalized service that exceeds your expectations and ensures that every project is completed to the highest standards. We believe in making home services more accessible and trustworthy for everyone, striving to provide a seamless experience from start to finish.
+        </p>
+        <div class="date-founded">
+            <strong>Date Founded:</strong> 02/07/2024
+        </div>
+    </div>
+</body>
+</html>

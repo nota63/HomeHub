@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
+    <!-- CSS Animations Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #333, #000);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+        .bio {
+            font-size: 1em;
+            margin-bottom: 30px;
+            color: #ddd;
+            max-width: 600px;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            max-width: 600px;
+            width: 100%;
+        }
+        .button-grid button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 0.8em;
+            cursor: pointer;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            animation: fadeIn 1s ease;
+        }
+        .button-grid button:hover {
+            background-color: #2980b9;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+     {% if user.is_authenticated %}
+        <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+     <h5>create account or login to get a secured experience</h5>
+        <a href="{% url 'account_login' %}">Login</a>
+        <a href="{% url 'account_signup' %}">Sign Up</a>
+    {% endif %}
+     <br>
+
+
+
+
+    <div class="logo animate__animated animate__fadeIn">
+        {% load static %}
+        <img src="{% static 'ap.png'%}" alt="Company Logo">
+    </div>
+    <h1>Welcome to Homehub!</h1>
+    <p class="bio">Homehub - A place to satisfy your work</p>
+
+    <div class="button-grid">
+        <section>
+            <a href="{% url 'schedule_work' %}">
+                <button type="button">Schedule Work</button>
+            </a>
+        </section>
+        <section>
+            <a href="{% url 'summery' %}">
+                <button type="button">Check Your Order</button>
+            </a>
+        </section>
+        <section>
+            <a href="{% url 'admin_password' %}">
+                <button type="button">Admin</button>
+            </a>
+        </section>
+        <section>
+            <a href="{% url 'view_team' %}">
+                <button type="button">View Workers</button>
+            </a>
+        </section>
+        <section>
+            <a href="{% url 'view_rates' %}">
+                <button type="button">View Pricing</button>
+            </a>
+        </section>
+        <section>
+            <a href="{% url 'special' %}">
+                <button type="button">Check Offers</button>
+            </a>
+        </section>
+        <section>
+            <a href="{% url 'feedback' %}">
+                <button type="button">Feedback</button>
+            </a>
+        </section>
+
+        <section>
+            <a href="{% url 'what_we_are'%}">
+                <button type="button">What we are</button>
+            </a>
+        </section>
+
+        <section>
+            <a href="{% url 'about_owner'%}">
+                <button type="button">About owner</button>
+            </a>
+        </section>
+
+    </div>
+</body>
+</html>
+

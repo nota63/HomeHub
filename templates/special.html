@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discounts</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .discount-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 400px; /* Increased width */
+            height: 250px; /* Decreased height */
+            text-align: center;
+            overflow-y: auto;
+        }
+        .discount-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .discount-details {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #555;
+        }
+        .discount-valid {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #888;
+        }
+        .back-button {
+            margin-top: 20px;
+        }
+        .back-button button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .back-button button:hover {
+            background-color: #0056b3;
+        }
+        .back-button button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="discount-container">
+        <div class="discount-title">Special Discount</div>
+        {% for s in special %}
+        <div class="discount-details">
+            <p>Work: <strong>{{ s.work | safe }}</strong></p>
+            <p>Discount: <strong>{{ s.special | safe }}</strong></p>
+        </div>
+        <div class="discount-valid">Valid until: <strong>{{ s.until | safe }}</strong></div>
+        {% endfor %}
+        <div class="back-button">
+            <a href="{% url 'home' %}">
+                <button type="button">Back</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        gsap.from(".discount-container", {
+            duration: 1.5,
+            opacity: 0,
+            y: 50,
+            ease: "power3.out"
+        });
+    </script>
+</body>
+</html>

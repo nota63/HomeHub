@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomeHub - Home</title>
+</head>
+<body>
+    <h1>Welcome to HomeHub</h1>
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}!</p>
+        <a href="{% url 'account_logout' %}">Logout</a>
+        <br>
+        <a href="{% url 'home'%}">
+            <button type="submit">explore</button>
+        </a>
+    {% else %}
+        <a href="{% url 'account_login' %}">Login</a> |
+        <a href="{% url 'account_signup' %}">Sign Up</a>
+    {% endif %}
+</body>
+</html>

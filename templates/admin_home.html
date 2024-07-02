@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
+    <!-- CSS Animations Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #333, #000);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #f1c40f;
+        }
+        .logo {
+            margin-top: 20px;
+        }
+        .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        section {
+            margin: 20px 0;
+        }
+        .generate-bills a, .admin-links a {
+            text-decoration: none;
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #2980b9;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        {% load static %}
+        <img src="{% static 'ap.png'%}" alt="Company Logo">
+    </div>
+    <h3>Welcome to the Admin Of the HomeHub</h3>
+    <section>
+        <div class="generate-bills">
+            <a href="{% url 'generate_bills' %}">
+                <button type="button">Generate Bills</button>
+            </a>
+        </div>
+    </section>
+    <section class="admin-links">
+        <a href="/admin/">
+            <button type="button">Post Discounts</button>
+        </a>
+    </section>
+    <section class="admin-links">
+        <a href="/admin/">
+            <button type="button">Update Credentials</button>
+        </a>
+    </section>
+    <section class="admin-links">
+        <a href="{% url 'manage_admin_passwords' %}">
+            <button type="button">View Credentials</button>
+        </a>
+    </section>
+</body>
+</html>

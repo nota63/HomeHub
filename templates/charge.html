@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap">
+    <!-- CSS Animations Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #333, #000);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .payment-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 250px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.5em;
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .message {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .info {
+            font-size: 0.8em;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 0.8em;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    {% if request.session.items %}
+        <div class="payment-container">
+            <h2>Complete Your Payment</h2>
+            <img src="https://th.bing.com/th/id/OIP.U4XT2TNC5OMOnkb0vZEPZgAAAA?rs=1&pid=ImgDetMain" alt="QR Code" class="qr-code">
+            <div class="message">Please complete the payment by scanning the QR code above after the completion of your work. Thank you!</div>
+            <div class="info">You will get a bill from us into your WhatsApp after completion of the work. Stay updated! Thank you for working with us.</div>
+            <a href="{% url 'home' %}">
+                <button type="submit">Home</button>
+            </a>
+        </div>
+    {% else %}
+        <h4>You don't have any orders or due payments</h4>
+    {% endif %}
+</body>
+</html>
+

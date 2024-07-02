@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Rates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            margin: 0;
+            padding: 20px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            color: #f1c40f; /* Yellow color for the heading */
+            margin-bottom: 20px;
+            font-size: 24px; /* Smaller font size for the heading */
+            font-weight: 700;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px; /* Adjust the max width as needed */
+            height: 80vh; /* Adjust the height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding: 10px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.5); /* Slightly dark background */
+            border-radius: 8px; /* Slightly smaller border radius */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns instead of 5 */
+            gap: 8px; /* Reduced space between items */
+        }
+        .worker-rate-container {
+            width: 100%;
+            height: 100px; /* Smaller height for the worker rate container */
+            border-radius: 8px; /* Slightly smaller border radius */
+            overflow: hidden;
+            background: linear-gradient(135deg, #444, #555);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            opacity: 0.9;
+            transition: opacity 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .worker-rate-container:hover {
+            opacity: 1;
+            transform: scale(1.05); /* Slightly reduced scale on hover */
+        }
+        .worker-role {
+            font-size: 14px; /* Smaller font size */
+            font-weight: 700;
+            margin: 4px 0; /* Smaller margin */
+            text-align: center;
+        }
+        .worker-rate {
+            font-size: 18px; /* Smaller font size */
+            font-weight: 700;
+            color: #00bcd4;
+            text-align: center;
+        }
+        .worker-rate::before {
+            content: "$ ";
+        }
+        /* Keyframes for fadeInUp animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="animate__animated animate__fadeInDown">Our Rate Cards</h1>
+    <div class="container">
+        <!-- Worker Rate Containers -->
+        <div class="worker-rate-container">
+            <p class="worker-role">Electrician</p>
+            <p class="worker-rate">300</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">Plumber</p>
+            <p class="worker-rate">250</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">House Cleaner</p>
+            <p class="worker-rate">200</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">Carpenter</p>
+            <p class="worker-rate">350</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">Painter</p>
+            <p class="worker-rate">280</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">Handyman</p>
+            <p class="worker-rate">220</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">Appliance Repair Technician</p>
+            <p class="worker-rate">320</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">Landscape Gardener</p>
+            <p class="worker-rate">270</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">Roofing Specialist</p>
+            <p class="worker-rate">400</p>
+        </div>
+        <div class="worker-rate-container">
+            <p class="worker-role">Interior Designer</p>
+            <p class="worker-rate">350</p>
+        </div>
+    </div>
+</body>
+</html>

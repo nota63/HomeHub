@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work Scheduled</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            font-size: 12px;
+        }
+        .container {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            height: 250px;
+            overflow-y: auto;
+        }
+        h1, h2 {
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 12px;
+        }
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 8px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 12px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Confirmed!</h1>
+        <h2>Thank you for scheduling your work with us.</h2>
+        <p>Our worker will reach you shortly.</p>
+        <p>please go to order summary for further next step</p>
+        <div class="button-container">
+            <button onclick="window.location.href='/'">Go to Homepage</button>
+            <button onclick="window.location.href='/about_owner'">Contact Support</button>
+            <button onclick="window.location.href={% url 'summery'%}">Order Summary</button>
+        </div>
+    </div>
+    <script>
+        gsap.from(".container", {
+            duration: 1.5,
+            opacity: 0,
+            y: 50,
+            ease: "power3.out"
+        });
+    </script>
+</body>
+</html>
